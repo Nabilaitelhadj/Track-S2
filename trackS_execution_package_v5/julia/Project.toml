@@ -1,0 +1,4 @@
+name = "QueuedDvocTrackS"
+uuid = "6a6f3eaa-09d1-4a0f-9d7b-a49387a14d1e"
+authors = ["OpenAI Track-S external verification package"]
+version = "0.2.0"

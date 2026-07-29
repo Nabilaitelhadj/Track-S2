@@ -1,0 +1,5335 @@
+{
+  "coverage": {
+    "domain_ranges": [
+      "T in [495,505]",
+      "phi_f in [0,50)",
+      "phi_s in [0,100)"
+    ],
+    "derived_scalar_ranges": [
+      "a=T+phi_f in [495,555)",
+      "b=T+phi_s in [495,605)",
+      "d=phi_s-phi_f in (-50,100)"
+    ],
+    "exhaustive_disjoint_partitions": {
+      "a": [
+        "[495,500)",
+        "[500,550)",
+        "[550,555)"
+      ],
+      "b": [
+        "[495,500)",
+        "[500,600)",
+        "[600,605)"
+      ],
+      "d": [
+        "(-50,0]",
+        "(0,50]",
+        "(50,100)"
+      ]
+    },
+    "proof": "Each domain point has exactly one classification triple. Exact Fourier-Motzkin elimination proves 13 triples have positive interior slack; the remaining triples have no positive interior slack. Pairwise combined interiors have zero positive slack. Hence the 13 half-open cells cover the domain with disjoint interiors."
+  },
+  "cells": [
+    {
+      "id": 0,
+      "name": "C00",
+      "N_fast": 9,
+      "N_source": 4,
+      "order_region": "d<=0",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "500",
+        "500",
+        "0"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f<500",
+        "T+phi_s<500",
+        "phi_s-phi_f<=0"
+      ],
+      "event_signature": "FFSFFSFFSFFSF",
+      "event_count": 13,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -450.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -450.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -400.0
+      },
+      "interior_successors": [
+        6,
+        10,
+        11
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          496.0,
+          2.0,
+          1.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 1,
+      "name": "C01",
+      "N_fast": 9,
+      "N_source": 4,
+      "order_region": "0<d<=50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "500",
+        "500",
+        "0",
+        "50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f<500",
+        "T+phi_s<500",
+        "phi_s-phi_f>0",
+        "phi_s-phi_f<=50"
+      ],
+      "event_signature": "FSFFSFFSFFSFF",
+      "event_count": 13,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -450.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -450.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -400.0
+      },
+      "interior_successors": [
+        7,
+        8,
+        12
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          496.0,
+          1.0,
+          2.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 2,
+      "name": "C02",
+      "N_fast": 9,
+      "N_source": 5,
+      "order_region": "0<d<=50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "500",
+        "-500",
+        "600",
+        "0",
+        "50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        6,
+        8,
+        9
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f<500",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f>0",
+        "phi_s-phi_f<=50"
+      ],
+      "event_signature": "FSFFSFFSFFSFFS",
+      "event_count": 14,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "constant_us": -500.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -450.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        4,
+        5,
+        9
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          498.0,
+          1.0,
+          3.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 3,
+      "name": "C03",
+      "N_fast": 9,
+      "N_source": 5,
+      "order_region": "d>50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "500",
+        "-500",
+        "600",
+        "-50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        6,
+        8,
+        9
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f<500",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f>50"
+      ],
+      "event_signature": "SFFSFFSFFSFFSF",
+      "event_count": 14,
+      "events": [
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -450.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -450.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        6,
+        10,
+        11
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          496.0,
+          1.0,
+          52.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 4,
+      "name": "C04",
+      "N_fast": 10,
+      "N_source": 4,
+      "order_region": "d<=0",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-500",
+        "550",
+        "500",
+        "0"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        7,
+        8
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=500",
+        "T+phi_f<550",
+        "T+phi_s<500",
+        "phi_s-phi_f<=0"
+      ],
+      "event_signature": "FFSFFSFFSFFSFF",
+      "event_count": 14,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -500.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -500.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -400.0
+      },
+      "interior_successors": [
+        3,
+        7,
+        8,
+        12
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          496.0,
+          5.0,
+          1.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 5,
+      "name": "C05",
+      "N_fast": 10,
+      "N_source": 5,
+      "order_region": "d<=0",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-500",
+        "550",
+        "-500",
+        "600",
+        "0"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=500",
+        "T+phi_f<550",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f<=0"
+      ],
+      "event_signature": "FFSFFSFFSFFSFFS",
+      "event_count": 15,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "constant_us": -500.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -500.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        0,
+        4,
+        5,
+        9
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          500.0,
+          2.0,
+          1.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 6,
+      "name": "C06",
+      "N_fast": 10,
+      "N_source": 5,
+      "order_region": "0<d<=50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-500",
+        "550",
+        "-500",
+        "600",
+        "0",
+        "50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        7,
+        9,
+        10
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=500",
+        "T+phi_f<550",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f>0",
+        "phi_s-phi_f<=50"
+      ],
+      "event_signature": "FSFFSFFSFFSFFSF",
+      "event_count": 15,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -500.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -500.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        1,
+        2,
+        6,
+        10,
+        11
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          496.0,
+          5.0,
+          6.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 7,
+      "name": "C07",
+      "N_fast": 10,
+      "N_source": 5,
+      "order_region": "d>50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-500",
+        "550",
+        "-500",
+        "600",
+        "-50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        7,
+        9,
+        10
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=500",
+        "T+phi_f<550",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f>50"
+      ],
+      "event_signature": "SFFSFFSFFSFFSFF",
+      "event_count": 15,
+      "events": [
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -500.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -500.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        3,
+        7,
+        8,
+        12
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          500.0,
+          1.0,
+          52.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 8,
+      "name": "C08",
+      "N_fast": 10,
+      "N_source": 6,
+      "order_region": "d>50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-500",
+        "550",
+        "-600",
+        "-50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        7,
+        9
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=500",
+        "T+phi_f<550",
+        "T+phi_s>=600",
+        "phi_s-phi_f>50"
+      ],
+      "event_signature": "SFFSFFSFFSFFSFFS",
+      "event_count": 16,
+      "events": [
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "S",
+          "index": 5,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 600.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "constant_us": -600.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -500.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -600.0
+      },
+      "interior_successors": [
+        0,
+        4,
+        5,
+        9
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          502.0,
+          1.0,
+          99.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 9,
+      "name": "C09",
+      "N_fast": 11,
+      "N_source": 5,
+      "order_region": "d<=0",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-550",
+        "-500",
+        "600",
+        "0"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        8
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=550",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f<=0"
+      ],
+      "event_signature": "FFSFFSFFSFFSFFSF",
+      "event_count": 16,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 10,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 550.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -550.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -550.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        1,
+        2,
+        6
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          502.0,
+          49.0,
+          1.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 10,
+      "name": "C10",
+      "N_fast": 11,
+      "N_source": 5,
+      "order_region": "0<d<=50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-550",
+        "-500",
+        "600",
+        "0",
+        "50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        8,
+        9
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=550",
+        "T+phi_s>=500",
+        "T+phi_s<600",
+        "phi_s-phi_f>0",
+        "phi_s-phi_f<=50"
+      ],
+      "event_signature": "FSFFSFFSFFSFFSFF",
+      "event_count": 16,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 10,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 550.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -550.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -550.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -500.0
+      },
+      "interior_successors": [
+        3,
+        7,
+        8
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          504.0,
+          47.0,
+          48.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 11,
+      "name": "C11",
+      "N_fast": 11,
+      "N_source": 6,
+      "order_region": "0<d<=50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1
+        ],
+        [
+          0,
+          -1,
+          1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-550",
+        "-600",
+        "0",
+        "50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        8
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=550",
+        "T+phi_s>=600",
+        "phi_s-phi_f>0",
+        "phi_s-phi_f<=50"
+      ],
+      "event_signature": "FSFFSFFSFFSFFSFFS",
+      "event_count": 17,
+      "events": [
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 10,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 550.0
+        },
+        {
+          "kind": "S",
+          "index": 5,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 600.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": 0.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            0.0,
+            1.0
+          ],
+          "constant_us": -600.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -550.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -600.0
+      },
+      "interior_successors": [
+        0,
+        4,
+        5
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          504.0,
+          48.0,
+          97.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    },
+    {
+      "id": 12,
+      "name": "C12",
+      "N_fast": 11,
+      "N_source": 6,
+      "order_region": "d>50",
+      "H_theta": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          -1,
+          -1,
+          0
+        ],
+        [
+          -1,
+          0,
+          -1
+        ],
+        [
+          0,
+          1,
+          -1
+        ]
+      ],
+      "h_theta": [
+        "-495",
+        "505",
+        "0",
+        "50",
+        "0",
+        "100",
+        "-550",
+        "-600",
+        "-50"
+      ],
+      "strict_facets": [
+        3,
+        5,
+        8
+      ],
+      "facet_text": [
+        "T>=495",
+        "T<=505",
+        "phi_f>=0",
+        "phi_f<50",
+        "phi_s>=0",
+        "phi_s<100",
+        "T+phi_f>=550",
+        "T+phi_s>=600",
+        "phi_s-phi_f>50"
+      ],
+      "event_signature": "SFFSFFSFFSFFSFFSF",
+      "event_count": 17,
+      "events": [
+        {
+          "kind": "S",
+          "index": 0,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "F",
+          "index": 0,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "kind": "F",
+          "index": 1,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "kind": "S",
+          "index": 1,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "F",
+          "index": 2,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 150.0
+        },
+        {
+          "kind": "F",
+          "index": 3,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 200.0
+        },
+        {
+          "kind": "S",
+          "index": 2,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "F",
+          "index": 4,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 250.0
+        },
+        {
+          "kind": "F",
+          "index": 5,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 300.0
+        },
+        {
+          "kind": "S",
+          "index": 3,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "F",
+          "index": 6,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 350.0
+        },
+        {
+          "kind": "F",
+          "index": 7,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 400.0
+        },
+        {
+          "kind": "S",
+          "index": 4,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "F",
+          "index": 8,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 450.0
+        },
+        {
+          "kind": "F",
+          "index": 9,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 500.0
+        },
+        {
+          "kind": "S",
+          "index": 5,
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 600.0
+        },
+        {
+          "kind": "F",
+          "index": 10,
+          "coeff": [
+            0.0,
+            -1.0,
+            0.0
+          ],
+          "constant_us": 550.0
+        }
+      ],
+      "dwell_formulas": [
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "constant_us": 50.0
+        },
+        {
+          "coeff": [
+            0.0,
+            1.0,
+            -1.0
+          ],
+          "constant_us": 100.0
+        },
+        {
+          "coeff": [
+            0.0,
+            -1.0,
+            1.0
+          ],
+          "constant_us": -50.0
+        },
+        {
+          "coeff": [
+            1.0,
+            1.0,
+            0.0
+          ],
+          "constant_us": -550.0
+        }
+      ],
+      "phase_update": {
+        "phi_f_plus_coeff": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "phi_f_plus_constant_us": -550.0,
+        "phi_s_plus_coeff": [
+          1.0,
+          0.0,
+          1.0
+        ],
+        "phi_s_plus_constant_us": -600.0
+      },
+      "interior_successors": [
+        1,
+        2,
+        6
+      ],
+      "interior_eps_interval": [
+        "0",
+        "1"
+      ],
+      "interior_witness": {
+        "x": [
+          504.0,
+          47.0,
+          99.0
+        ],
+        "eps": 1.0,
+        "max_violation": 0.0
+      }
+    }
+  ]
+}

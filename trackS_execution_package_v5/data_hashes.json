@@ -1,0 +1,78 @@
+{
+  "authoritative_center_maps.npz": {
+    "bytes": 235859,
+    "sha256": "7f190f538619cb7c9a39833d1c2241cb7e9eb6c282615c00638263790ccaf07d"
+  },
+  "authoritative_trackS_problem.mat": {
+    "bytes": 235182,
+    "sha256": "a3bd93d6e8830cebe37f791e2f01f1f94eab3d03a58519b83595c7c7525e8c97"
+  },
+  "cell_vertices.json": {
+    "bytes": 37393,
+    "sha256": "7c638eb63e0d7c3aef50a292da723af928c3a35925dc6f6e18b1429cdee46ff2"
+  },
+  "edge_center_maps.npz": {
+    "bytes": 171497,
+    "sha256": "cdb7bc762342203e6531b0984ae7be3a18650ecce7ff8d2b3e41fa7f965d7e55"
+  },
+  "edge_conditioned_domains.json": {
+    "bytes": 312700,
+    "sha256": "5d92fd62ae4f9f51bdde4500fa09ba5511ed1215a9cccc7b52972efe779a9c88"
+  },
+  "event_cells.json": {
+    "bytes": 116027,
+    "sha256": "407cc109ef41a93559e331d24c9a5866ab82f8194cf17dab81d03daaec195dba"
+  },
+  "event_partition_proof.py": {
+    "bytes": 10459,
+    "sha256": "7b3ecf025fa6dfbd2446c5a6216cffd0ae914f0521cd4c1cc2a3cc58883a794e"
+  },
+  "queued_dvoc_gate_candidate.npz": {
+    "bytes": 19726,
+    "sha256": "95de886fb2b0b8a313f2d89a8e9cebafc872e53f9dda020004a283e3ee563350"
+  },
+  "reference_apparatus.py": {
+    "bytes": 68404,
+    "sha256": "1bddc964f571651e3aed5c07d945644e40b679b0a1088f5d080768132c37587d"
+  },
+  "reference_apparatus_A1.py": {
+    "bytes": 42785,
+    "sha256": "7b7529850ea05c9eaa88b431d488f8469b8056d492d6eb04964f70ad045c22fe"
+  },
+  "reference_apparatus_A1_manifest.json": {
+    "bytes": 3587,
+    "sha256": "8419f8fc9f1d167a50555023272b5bda345bbdc7831de7d863adacf28fb091c6"
+  },
+  "reference_apparatus_A1_matrices.npz": {
+    "bytes": 52154,
+    "sha256": "b95a5a0f3a60fe8467f69c382974e753809dd3c79699d2c3c44a69f9f9aa7d1f"
+  },
+  "regenerated_center_maps.npz": {
+    "bytes": 235859,
+    "sha256": "7f190f538619cb7c9a39833d1c2241cb7e9eb6c282615c00638263790ccaf07d"
+  },
+  "timing_cell_matrices.npz": {
+    "bytes": 78244,
+    "sha256": "805470552deefe49d3723d1721f3f5a6367f3f559c2dee10c1b919361ce06cea"
+  },
+  "timing_center_sdp_problem.mat": {
+    "bytes": 128376,
+    "sha256": "4c8f70a1f0bca650ad917f38f022fb12e2ebd9db7d56f6bef7940732587ad75a"
+  },
+  "timing_center_sdp_problem.npz": {
+    "bytes": 63972,
+    "sha256": "d3e2f620c35cb07c6087de631e4dad59a419df393a7b6b91bf3e7425d9bb11a5"
+  },
+  "timing_lyapunov_matrices.npz": {
+    "bytes": 159345,
+    "sha256": "229140696fca9cabe6050f4a043c031535cdc20e6b37d28bfd350d0bcea061bf"
+  },
+  "verified_event_cells.json": {
+    "bytes": 90487,
+    "sha256": "d1cab716aa2ed38558b5c38a1f01a3ce8039b5a02b2bc3e6237425d324d016dd"
+  },
+  "verified_event_graph.json": {
+    "bytes": 12718,
+    "sha256": "73d6e85aac04cd4abd6439fc76c39e853bbefbdf57697d0e6e46a65491398b6d"
+  }
+}

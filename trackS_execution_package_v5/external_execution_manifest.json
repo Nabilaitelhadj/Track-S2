@@ -1,0 +1,58 @@
+{
+  "center_exit_code_contract": {
+    "0": "CANDIDATE_PRODUCED",
+    "10": "EXECUTED_NO_CANDIDATE (S-D; feasibility open)",
+    "11": "SCREENING_ONLY",
+    "20": "TOOLCHAIN_UNAVAILABLE (S-F)",
+    "21": "RUNTIME_ERROR (S-F)"
+  },
+  "certificate_semantics_patch": {
+    "acceptance_margin": "tau_cert from independently recomputed unshifted rounded-candidate LMIs",
+    "clarabel_primary_candidate_generator": true,
+    "continuum_reports": [
+      "robust_contraction_lower_bound",
+      "robust_margin_after_tau"
+    ],
+    "contraction_requires_gamma_below_one": true,
+    "enclosure_fail_closed": true,
+    "model_scope": "frozen rounded canonical A1 linearized hybrid model and declared timing continuum"
+  },
+  "claim_boundary": "No certificate has been found or ruled out. External execution and proof-grade verification are required.",
+  "dependency_model": {
+    "ci_semantics": "scientific status is JSON-driven; operational exit codes distinguish S-D, screening-only, toolchain failure, and runtime error",
+    "core": "requirements-core.txt",
+    "optional": [
+      "requirements-cvxopt.txt",
+      "requirements-sdpa.txt",
+      "requirements-mosek.txt",
+      "requirements-optional-all.txt"
+    ]
+  },
+  "final_status": "S-F. EXECUTION OR TOOLCHAIN FAILURE (current unprovisioned runtime)",
+  "local_toolchain": "NO_LOCAL_SDP_SOLVER_EXTERNAL_EXECUTION_REQUIRED",
+  "not_attempted": [
+    "present-hold nonlinear reachability",
+    "queued-hold nonlinear reachability",
+    "physical two-reserve governor",
+    "recursive feasibility"
+  ],
+  "package_edition": "v5 status-specific execution semantics",
+  "problem": {
+    "cells": 13,
+    "common_sdp": "margin maximization on 13 authoritative regenerated cell maps",
+    "continuum_enclosure": "cell and edge independent-dwell interval enclosure using Julia validated arithmetic",
+    "edges": 45,
+    "graph_dependent_sdp": "margin maximization on 45 edge-conditioned maps with global normalization",
+    "proof_verification": "IntervalLinearAlgebra verified eigenvalues plus outward norm bounds",
+    "state_dimension": 35
+  },
+  "required_final_verdicts": [
+    "S-A",
+    "S-B",
+    "S-C",
+    "S-D",
+    "S-E",
+    "S-F"
+  ],
+  "scope": "Track S only; Track B1 not started"
+}

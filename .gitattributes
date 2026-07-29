@@ -1,0 +1,23 @@
+# Canonical repository text bytes. Git checkouts on every operating system use LF.
+*       text=auto eol=lf
+*.py    text eol=lf
+*.sh    text eol=lf
+*.md   text eol=lf
+*.txt   text eol=lf
+*.json  text eol=lf
+*.yml   text eol=lf
+*.yaml  text eol=lf
+*.toml  text eol=lf
+*.jl    text eol=lf
+*.m     text eol=lf
+*.csv   text eol=lf
+
+# Scientific containers and archives must never be line-ending transformed.
+*.npz   binary
+*.npy   binary
+*.mat   binary
+*.zip   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.pdf   binary

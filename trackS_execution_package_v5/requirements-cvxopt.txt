@@ -1,0 +1,2 @@
+-r requirements-core.txt
+cvxopt>=1.3,<2

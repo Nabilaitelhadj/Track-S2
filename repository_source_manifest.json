@@ -1,0 +1,480 @@
+{
+  "entries": [
+    {
+      "path": ".gitattributes",
+      "sha256": "e509980711a82599bad6e101f9186bfd154006dbe3945fda7a35bf1b56f02dc4",
+      "size": 524
+    },
+    {
+      "path": ".github/workflows/trackS_execute.yml",
+      "sha256": "3d650501bcf9178be96533e9b9e1c5a9a3d2587d0b911ee8ce21145b30813266",
+      "size": 14993
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "e14d92c0a0ae6e00589a846f3d781202c0f596cfc8807c51db021858f1db1a00",
+      "size": 417
+    },
+    {
+      "path": "BUNDLE_MANIFEST.json",
+      "sha256": "cd7b5e76ccb614d116c6d02147002d51577844487da5912360e6de9aeb20e260",
+      "size": 2679
+    },
+    {
+      "path": "INTEGRITY_POLICY.md",
+      "sha256": "0a85de1274201f57bf5a8c0093e030fbf08ef875da005b455d1aa500d884218b",
+      "size": 2339
+    },
+    {
+      "path": "README.md",
+      "sha256": "b9eeb768fca44e35ce4025ca4e4c7a62177f173076527fd4b3140f39e48d9f0b",
+      "size": 3765
+    },
+    {
+      "path": "REMOTE_EXECUTION_README.md",
+      "sha256": "13cee62e009a2a4ddc1b8ec5d17e57aec43f7af76e4925778bb0dcdd48c9835d",
+      "size": 1158
+    },
+    {
+      "path": "REPAIR_NOTES.md",
+      "sha256": "2a2eda135ebf57aff5c2074007d22c355b2df0561c717f8f78cc46dcbb0f6ad1",
+      "size": 1467
+    },
+    {
+      "path": "UPLOAD_AND_RUN.md",
+      "sha256": "53e740de91aff6062a3ee0bcbe4e2d251b108ab1bf07f851aa182c9568f3b96e",
+      "size": 1370
+    },
+    {
+      "path": "orchestration/deterministic_archive.py",
+      "sha256": "901b81f89eee00cc641bd7d6f781725d980e92bc6e78051bdd919816119580c9",
+      "size": 3209
+    },
+    {
+      "path": "orchestration/deterministic_manifest.py",
+      "sha256": "911255806d396040936046c647bed50f826301d79b88428095a94330660a6d78",
+      "size": 5539
+    },
+    {
+      "path": "orchestration/final_adjudicate.py",
+      "sha256": "8188b4a7a5ec475ceee1eb1f4b41eeb5d1b0c1ae1ea9210fad10f7708e79dd2b",
+      "size": 8290
+    },
+    {
+      "path": "orchestration/integrity_policy.py",
+      "sha256": "6fe4e7f7815025024469d63ae8780676b1c19bedbaa3d2378a238ac0f19dc947",
+      "size": 4466
+    },
+    {
+      "path": "orchestration/prepare_clean_package.py",
+      "sha256": "4d633eb478f5a7bca473991fa69a51ddfd99be23c95c912576a09f580367b9e7",
+      "size": 2667
+    },
+    {
+      "path": "orchestration/rebuild_integrity_metadata.py",
+      "sha256": "7abbb40c98ad418f58c7cbc7ef1d50d71c9c9da4b30f449c376ed5e1139c86f3",
+      "size": 9102
+    },
+    {
+      "path": "orchestration/requirements-integrity.txt",
+      "sha256": "fe560833c3ff8028047a6cc554ba3b3f739cca77a10dd9ab2d4f1289a5d09ca5",
+      "size": 71
+    },
+    {
+      "path": "orchestration/run_center_stage.py",
+      "sha256": "512870135ad9530ca9e75698d32c32d71a15316e792ae5cbbf02df0ff03e435f",
+      "size": 11401
+    },
+    {
+      "path": "orchestration/run_continuum_stage.py",
+      "sha256": "97a8b712aadb42f2ae41ebcfaca5072310fb280854bce7049a66a4edeb701224",
+      "size": 10092
+    },
+    {
+      "path": "orchestration/run_integrity_stage.py",
+      "sha256": "3ebdb31530f84c15f3d8437bd983d4e37776872d23697c1f034593afc16e4d60",
+      "size": 17429
+    },
+    {
+      "path": "orchestration/test_integrity_regressions.py",
+      "sha256": "3543614f7d2097e64192f89565963eba0191253cbb4be06448a3ac17d31782f2",
+      "size": 13912
+    },
+    {
+      "path": "orchestration/validate_bundle_metadata.py",
+      "sha256": "470d16a4d1a723d0f7870191519868e7076ded039a72834bfd76378b961ed48c",
+      "size": 7820
+    },
+    {
+      "path": "orchestration/validate_json_tree.py",
+      "sha256": "001b787a2219e31e31c9e7b6c69d59b759544681830ab5c1895b5f181dca0592",
+      "size": 1254
+    },
+    {
+      "path": "orchestration/validate_workflow.py",
+      "sha256": "01e28e9a4b0ee72002a2cf6edc4180d4f624eba15eaf8db1a64b8495e9d81864",
+      "size": 8956
+    },
+    {
+      "path": "source_archives/SHA256SUMS",
+      "sha256": "26f2caed727b8489f9f6b3690046b53a91c4b07cd3b1a190e5cc468353f9e2d1",
+      "size": 229
+    },
+    {
+      "path": "trackS_execution_package_v5/AUTHORITATIVE_TRACKS_BRIEF.md",
+      "sha256": "36876c6471b36ac6994569adcdf884715a1ff980da3d612c769c94c621d5b74c",
+      "size": 25134
+    },
+    {
+      "path": "trackS_execution_package_v5/Dockerfile",
+      "sha256": "0315ce24d87a39c79de69acc338fd8642c4ddd08610cea63cd16c953fb8ea086",
+      "size": 366
+    },
+    {
+      "path": "trackS_execution_package_v5/Dockerfile.julia",
+      "sha256": "4a8a53259d6c9889d78d4f7798ca2e3d3863a885628d612b925bd21b6cc7a0f3",
+      "size": 137
+    },
+    {
+      "path": "trackS_execution_package_v5/EXIT_STATUS_SEMANTICS.md",
+      "sha256": "d5e70819168297fec8c1c1ddb366dd18f9a25a70f96e8c4f59cbe9579fcb10d3",
+      "size": 1364
+    },
+    {
+      "path": "trackS_execution_package_v5/FINAL_PACKAGE_AMENDMENTS.md",
+      "sha256": "09330f31fc509375f170f420569c742d698564f278db138de017359c2efd3f8e",
+      "size": 1843
+    },
+    {
+      "path": "trackS_execution_package_v5/README.md",
+      "sha256": "28c3f973020ed16bf4079447d89bced1144e2e493f615a0dc4b5b0c632284769",
+      "size": 8377
+    },
+    {
+      "path": "trackS_execution_package_v5/build_edge_conditioned_data.py",
+      "sha256": "62455e45c5a4cc2603b059f3f697049886973e0dceb6462c4457e122df6e32e5",
+      "size": 13362
+    },
+    {
+      "path": "trackS_execution_package_v5/center_status.py",
+      "sha256": "67d31907475901367948f953b69babb7ff701be393648d626bbc19bcb54b5099",
+      "size": 1637
+    },
+    {
+      "path": "trackS_execution_package_v5/common_sdp.py",
+      "sha256": "0621fb028d0f4e3c19d32f396b958ab34b20a5eabb1febdf81a212a68837a1d0",
+      "size": 5550
+    },
+    {
+      "path": "trackS_execution_package_v5/data/authoritative_center_maps.npz",
+      "sha256": "7f190f538619cb7c9a39833d1c2241cb7e9eb6c282615c00638263790ccaf07d",
+      "size": 235859
+    },
+    {
+      "path": "trackS_execution_package_v5/data/authoritative_trackS_problem.mat",
+      "sha256": "a3bd93d6e8830cebe37f791e2f01f1f94eab3d03a58519b83595c7c7525e8c97",
+      "size": 235182
+    },
+    {
+      "path": "trackS_execution_package_v5/data/cell_vertices.json",
+      "sha256": "7c638eb63e0d7c3aef50a292da723af928c3a35925dc6f6e18b1429cdee46ff2",
+      "size": 37393
+    },
+    {
+      "path": "trackS_execution_package_v5/data/edge_center_maps.npz",
+      "sha256": "cdb7bc762342203e6531b0984ae7be3a18650ecce7ff8d2b3e41fa7f965d7e55",
+      "size": 171497
+    },
+    {
+      "path": "trackS_execution_package_v5/data/edge_conditioned_domains.json",
+      "sha256": "5d92fd62ae4f9f51bdde4500fa09ba5511ed1215a9cccc7b52972efe779a9c88",
+      "size": 312700
+    },
+    {
+      "path": "trackS_execution_package_v5/data/event_cells.json",
+      "sha256": "407cc109ef41a93559e331d24c9a5866ab82f8194cf17dab81d03daaec195dba",
+      "size": 116027
+    },
+    {
+      "path": "trackS_execution_package_v5/data/event_partition_proof.py",
+      "sha256": "7b3ecf025fa6dfbd2446c5a6216cffd0ae914f0521cd4c1cc2a3cc58883a794e",
+      "size": 10459
+    },
+    {
+      "path": "trackS_execution_package_v5/data/queued_dvoc_gate_candidate.npz",
+      "sha256": "95de886fb2b0b8a313f2d89a8e9cebafc872e53f9dda020004a283e3ee563350",
+      "size": 19726
+    },
+    {
+      "path": "trackS_execution_package_v5/data/reference_apparatus.py",
+      "sha256": "1bddc964f571651e3aed5c07d945644e40b679b0a1088f5d080768132c37587d",
+      "size": 68404
+    },
+    {
+      "path": "trackS_execution_package_v5/data/reference_apparatus_A1.py",
+      "sha256": "7b7529850ea05c9eaa88b431d488f8469b8056d492d6eb04964f70ad045c22fe",
+      "size": 42785
+    },
+    {
+      "path": "trackS_execution_package_v5/data/reference_apparatus_A1_manifest.json",
+      "sha256": "8419f8fc9f1d167a50555023272b5bda345bbdc7831de7d863adacf28fb091c6",
+      "size": 3587
+    },
+    {
+      "path": "trackS_execution_package_v5/data/reference_apparatus_A1_matrices.npz",
+      "sha256": "b95a5a0f3a60fe8467f69c382974e753809dd3c79699d2c3c44a69f9f9aa7d1f",
+      "size": 52154
+    },
+    {
+      "path": "trackS_execution_package_v5/data/regenerated_center_maps.npz",
+      "sha256": "7f190f538619cb7c9a39833d1c2241cb7e9eb6c282615c00638263790ccaf07d",
+      "size": 235859
+    },
+    {
+      "path": "trackS_execution_package_v5/data/timing_cell_matrices.npz",
+      "sha256": "805470552deefe49d3723d1721f3f5a6367f3f559c2dee10c1b919361ce06cea",
+      "size": 78244
+    },
+    {
+      "path": "trackS_execution_package_v5/data/timing_center_sdp_problem.mat",
+      "sha256": "4c8f70a1f0bca650ad917f38f022fb12e2ebd9db7d56f6bef7940732587ad75a",
+      "size": 128376
+    },
+    {
+      "path": "trackS_execution_package_v5/data/timing_center_sdp_problem.npz",
+      "sha256": "d3e2f620c35cb07c6087de631e4dad59a419df393a7b6b91bf3e7425d9bb11a5",
+      "size": 63972
+    },
+    {
+      "path": "trackS_execution_package_v5/data/timing_lyapunov_matrices.npz",
+      "sha256": "229140696fca9cabe6050f4a043c031535cdc20e6b37d28bfd350d0bcea061bf",
+      "size": 159345
+    },
+    {
+      "path": "trackS_execution_package_v5/data/verified_event_cells.json",
+      "sha256": "d1cab716aa2ed38558b5c38a1f01a3ce8039b5a02b2bc3e6237425d324d016dd",
+      "size": 90487
+    },
+    {
+      "path": "trackS_execution_package_v5/data/verified_event_graph.json",
+      "sha256": "73d6e85aac04cd4abd6439fc76c39e853bbefbdf57697d0e6e46a65491398b6d",
+      "size": 12718
+    },
+    {
+      "path": "trackS_execution_package_v5/data_hashes.json",
+      "sha256": "9b6f67284769812e34af788331576eedf679ecee1f099daba07dba22ee921b59",
+      "size": 2679
+    },
+    {
+      "path": "trackS_execution_package_v5/environment-optional-all.yml",
+      "sha256": "1dc4778bc6a56305be6f09bdb323fd0582b2f9d505a7dfde9be75d6741d508d9",
+      "size": 255
+    },
+    {
+      "path": "trackS_execution_package_v5/environment.yml",
+      "sha256": "ea5bae22e06452d577185e2dadf7b3c4562deedde43237530abba68187b854a8",
+      "size": 177
+    },
+    {
+      "path": "trackS_execution_package_v5/external_execution_manifest.json",
+      "sha256": "4c373ec0e6fefcceacec9a0a256f2f5b34c1bbc394c2675fb03d22d6b77b736b",
+      "size": 2247
+    },
+    {
+      "path": "trackS_execution_package_v5/graph_sdp.py",
+      "sha256": "fd53f7e0f51fffcb76458721211c3aa34b1ccfe9b4e6c1f84bd7a7f699215804",
+      "size": 5762
+    },
+    {
+      "path": "trackS_execution_package_v5/high_precision_center_verification.py",
+      "sha256": "660afa1f40258317c21d17d91559708e654d280ce040b5bc5eabef515d10ef30",
+      "size": 3589
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/Project.toml",
+      "sha256": "17be8fed25a865aeb5d298c3917591eccef655f9ad5daa2f508b0652fb55f5f7",
+      "size": 149
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/README.md",
+      "sha256": "27b53652755ce60fd67be14366c2845ce2ca5d5d863dc4b33c698a01b4c3eaa1",
+      "size": 1573
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/common_sdp_jump.jl",
+      "sha256": "48bf1cc25bcf42c41a76edb30527a1e930eed175ba7d20212c1d963ce9deadde",
+      "size": 6410
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/graph_sdp_jump.jl",
+      "sha256": "eb27fd497913f1e6df9ce06f9885b866725bd9a75ee9301e4fdc92cb3329998d",
+      "size": 7092
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/setup.jl",
+      "sha256": "0334d3775ddffa4086935bb72d2b1f2cb8d03caa7bf266e9b5f2a544baf82687",
+      "size": 246
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/timing_family_enclosure.jl",
+      "sha256": "34e917f69df16edc50a5d22a39833b7e83b116eebad9332c6e8ca73389baceb7",
+      "size": 7620
+    },
+    {
+      "path": "trackS_execution_package_v5/julia/verified_eigenvalue_bounds.jl",
+      "sha256": "ad98bd2346bd24a8a47888fee05a227c121bd5680f7b2db664a96021fd488618",
+      "size": 8843
+    },
+    {
+      "path": "trackS_execution_package_v5/matlab/README.md",
+      "sha256": "424a39cee54ac0fa491825bf2ddc4868902c66184c84062ee6a9d65767b45c92",
+      "size": 680
+    },
+    {
+      "path": "trackS_execution_package_v5/matlab/common_sdp_yalmip.m",
+      "sha256": "0dae76aadf523f0ddb7fcc29b9b37da1e278c1451912f1f1125833e6941de2d6",
+      "size": 3648
+    },
+    {
+      "path": "trackS_execution_package_v5/matlab/graph_sdp_yalmip.m",
+      "sha256": "6f60bc6758762be20fd5ad5dd1a4db7c01f9129522921b7b800865833ecea8d1",
+      "size": 3894
+    },
+    {
+      "path": "trackS_execution_package_v5/matlab/verify_center_certificate.m",
+      "sha256": "4e7ee8fc790b355dbe79273781267f8e3ef395bbf4728f6e60a672bd1a489456",
+      "size": 1897
+    },
+    {
+      "path": "trackS_execution_package_v5/preflight.py",
+      "sha256": "e15ebc5f91df9ff83c4db7a4dd13946cb713cf9697d877598ce562cf65c3d227",
+      "size": 3078
+    },
+    {
+      "path": "trackS_execution_package_v5/requirements-core.txt",
+      "sha256": "534bba5fed9116e2fe33d591fe71eac578e6c98c4beaeefa728ecdcbb0169c2a",
+      "size": 169
+    },
+    {
+      "path": "trackS_execution_package_v5/requirements-cvxopt.txt",
+      "sha256": "4e35d28bd36824e787cbb059fd4fb6f5986ac72613bbf1025bf3654fd16d4d12",
+      "size": 40
+    },
+    {
+      "path": "trackS_execution_package_v5/requirements-mosek.txt",
+      "sha256": "5a5d2114be52013fc2cf4dfbee79ec319b5300e221dc00e92fea7401be9bc059",
+      "size": 39
+    },
+    {
+      "path": "trackS_execution_package_v5/requirements-optional-all.txt",
+      "sha256": "a2c91eb7160040623dbb6efe623bb1393eacad744646a77bc96ff8bc3f8a993c",
+      "size": 151
+    },
+    {
+      "path": "trackS_execution_package_v5/requirements-sdpa.txt",
+      "sha256": "5da5d771d40947b49ce577a85a1b0cee21975bc25a0133b5667f154325b450b8",
+      "size": 42
+    },
+    {
+      "path": "trackS_execution_package_v5/requirements.txt",
+      "sha256": "6c8cb42355d8ed210308441beb3df9477dcf723677921a6b6164ce5692c0c069",
+      "size": 92
+    },
+    {
+      "path": "trackS_execution_package_v5/robust_certificate_verification.py",
+      "sha256": "ebe437670af8fa780dfd5a8899d52fbc45021ec655b78113973c291b43b4214b",
+      "size": 9436
+    },
+    {
+      "path": "trackS_execution_package_v5/run_center_and_verify.sh",
+      "sha256": "bf77eee3b12130cbe1afdef6a5a4fb3911fa5f911f941c51334de7155a6d4da8",
+      "size": 1679
+    },
+    {
+      "path": "trackS_execution_package_v5/run_center_sdps.py",
+      "sha256": "180ba9721bfc0066f4966f6e19d3f50407321be5c30cbb18fce044c7c148289e",
+      "size": 9155
+    },
+    {
+      "path": "trackS_execution_package_v5/run_full_external_trackS.sh",
+      "sha256": "981e43ee48282413b3217368699bdddaa264a7fec627c87f03856016791782a6",
+      "size": 4069
+    },
+    {
+      "path": "trackS_execution_package_v5/run_julia_enclosure.sh",
+      "sha256": "fde00175700dd8726407d3b7af3cb6d5b6163420fe2dbd99dc7d526487bf1122",
+      "size": 233
+    },
+    {
+      "path": "trackS_execution_package_v5/sdp_utils.py",
+      "sha256": "c650f1d44fe17e3b44888ef914a236f5f5d23afb62e3eb93200434565d575c27",
+      "size": 5875
+    },
+    {
+      "path": "trackS_execution_package_v5/test_exit_semantics.py",
+      "sha256": "247e0fc2701e6f7c5ff3721cbfc6305722bdf94a64b470f27b114bbe9da7bc03",
+      "size": 2321
+    },
+    {
+      "path": "trackS_execution_package_v5/timing_family_enclosure.py",
+      "sha256": "8bbe081ed50464b5b770f07f696a887f95e9127a1d6887f5f59a56a524fcd32f",
+      "size": 4989
+    },
+    {
+      "path": "trackS_execution_package_v5/update_trackS_status.py",
+      "sha256": "d398abe8eed0ddc0db5a8526d9a55f695d51af7aa9e3994a5561836305a76991",
+      "size": 1754
+    },
+    {
+      "path": "trackS_execution_package_v5/verify_problem_data.py",
+      "sha256": "27003008e25de5fcb0b4bf5bebf31e39420aaf39794721dfbdf92567da86299a",
+      "size": 4033
+    }
+  ],
+  "entry_count": 86,
+  "policy": {
+    "manifest_self_exclusion": true,
+    "package_generated_files": [
+      "clean_package_checksums.txt",
+      "clean_package_manifest.json",
+      "environment_lock_status.json",
+      "execution_preflight.json",
+      "final_trackS_execution_report.md",
+      "final_trackS_execution_status.json",
+      "package_integrity_report.json",
+      "patch_verification_results.json",
+      "problem_data_verification.json",
+      "status_exit_semantics_test_results.json",
+      "trackS_final_report.md",
+      "trackS_preflight.json"
+    ],
+    "package_result_directories": [
+      "logs",
+      "results"
+    ],
+    "policy_version": "trackS-integrity-v2",
+    "raw_byte_hashing": true,
+    "relative_path_format": "sorted POSIX",
+    "scope": "repository",
+    "transient_directories": [
+      ".git",
+      ".mypy_cache",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".venv",
+      "__pycache__",
+      "artifacts",
+      "build",
+      "dist",
+      "venv"
+    ],
+    "transient_suffixes": [
+      ".log",
+      ".pyc",
+      ".pyo"
+    ]
+  },
+  "policy_version": "trackS-integrity-v2",
+  "schema_version": 1,
+  "scope": "repository"
+}

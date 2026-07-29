@@ -1,0 +1,2 @@
+# Backward-compatible alias for the minimal first-run environment.
+-r requirements-core.txt

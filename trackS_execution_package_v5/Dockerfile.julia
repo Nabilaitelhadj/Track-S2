@@ -1,0 +1,5 @@
+FROM julia:1.10
+WORKDIR /work/trackS
+COPY . /work/trackS
+RUN julia --project=julia julia/setup.jl
+CMD ["bash", "run_julia_enclosure.sh"]

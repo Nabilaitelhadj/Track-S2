@@ -1,0 +1,396 @@
+name: Track-S provisioned execution
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_note:
+        description: Optional run note
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trackS-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: '3.11'
+  PACKAGE_NAME: trackS_execution_package_v5
+  ARTIFACT_RETENTION_DAYS: '30'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  integrity:
+    name: 1 - integrity and authoritative regeneration
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: orchestration/requirements-integrity.txt
+
+      - name: Install integrity dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install --requirement orchestration/requirements-integrity.txt
+          python -m pip check
+
+      - name: Run fail-closed integrity stage
+        run: |
+          set -euo pipefail
+          mkdir -p build/logs build/integrity_artifact
+          rc=0
+          python orchestration/run_integrity_stage.py \
+            --repo-root "$GITHUB_WORKSPACE" \
+            --artifact-root "$GITHUB_WORKSPACE/build/integrity_artifact" \
+            > build/logs/integrity_stdout.log \
+            2> build/logs/integrity_stderr.log || rc=$?
+          mkdir -p build/integrity_artifact/logs
+          cp -a build/logs/. build/integrity_artifact/logs/
+          if [[ "$rc" -ne 0 ]]; then
+            cat build/logs/integrity_stdout.log || true
+            cat build/logs/integrity_stderr.log >&2 || true
+            exit "$rc"
+          fi
+
+      - name: Upload integrity report and clean execution package
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: trackS-integrity-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/integrity_artifact
+          if-no-files-found: error
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+  center_sdps:
+    name: 2 - common and graph center SDPs
+    needs: integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    outputs:
+      outcome: ${{ steps.center_meta.outputs.outcome }}
+      scientific_status: ${{ steps.center_meta.outputs.scientific_status }}
+      center_exit_code: ${{ steps.center_meta.outputs.center_exit_code }}
+      candidate_produced: ${{ steps.center_meta.outputs.candidate_produced }}
+    steps:
+      - name: Checkout orchestration code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Download clean package from integrity job
+        uses: actions/download-artifact@v8
+        with:
+          name: trackS-integrity-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/center_input
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: trackS_execution_package_v5/requirements-core.txt
+
+      - name: Prepare center workspace
+        run: |
+          set -euo pipefail
+          test -d "build/center_input/${PACKAGE_NAME}"
+          mkdir -p build/center_work
+          cp -a "build/center_input/${PACKAGE_NAME}" "build/center_work/${PACKAGE_NAME}"
+
+      - name: Install primary center toolchain
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          python -m pip install --requirement "trackS_execution_package_v5/requirements-core.txt"
+          python -m pip check
+
+      - name: Attempt optional CVXOPT replication backend
+        id: cvxopt_install
+        continue-on-error: true
+        run: python -m pip install --requirement "trackS_execution_package_v5/requirements-cvxopt.txt"
+
+      - name: Record environment and solver versions
+        working-directory: build/center_work/${{ env.PACKAGE_NAME }}
+        run: |
+          set -euo pipefail
+          mkdir -p logs
+          python - <<'PY' | tee logs/solver_environment.txt
+          import importlib
+          import platform
+          import sys
+          import cvxpy as cp
+
+          print('platform:', platform.platform())
+          print('python:', sys.version)
+          print('cvxpy:', cp.__version__)
+          print('installed_solvers:', cp.installed_solvers())
+          for name in ['clarabel', 'scs', 'cvxopt', 'numpy', 'scipy', 'h5py', 'mpmath']:
+              try:
+                  module = importlib.import_module(name)
+                  print(f'{name}:', getattr(module, '__version__', 'unknown'))
+              except Exception as exc:
+                  print(f'{name}: unavailable ({exc!r})')
+          PY
+          python -m pip freeze > logs/python_environment_lock.txt
+
+      - name: Verify immutable clean package and authoritative data
+        run: |
+          set -euo pipefail
+          python orchestration/deterministic_manifest.py verify \
+            --root "$GITHUB_WORKSPACE/build/center_work/${PACKAGE_NAME}" \
+            --json "$GITHUB_WORKSPACE/build/center_work/${PACKAGE_NAME}/clean_package_manifest.json" \
+            --text "$GITHUB_WORKSPACE/build/center_work/${PACKAGE_NAME}/clean_package_checksums.txt"
+          cd "$GITHUB_WORKSPACE/build/center_work/${PACKAGE_NAME}"
+          python preflight.py | tee logs/preflight_remote.log
+          python verify_problem_data.py | tee logs/verify_problem_data_remote.log
+
+      - name: Execute and adjudicate center SDPs
+        id: center
+        run: |
+          set -euo pipefail
+          rc=0
+          python orchestration/run_center_stage.py \
+            --root "$GITHUB_WORKSPACE/build/center_work/${PACKAGE_NAME}" \
+            --solver-timeout-s 3000 \
+            > build/center_work/center_stdout.log \
+            2> build/center_work/center_stderr.log || rc=$?
+          printf '%s\n' "$rc" > build/center_work/center_operational_exit_code.txt
+          cp build/center_work/center_operational_exit_code.txt \
+            "build/center_work/${PACKAGE_NAME}/center_operational_exit_code.txt"
+          echo "=== center stdout (first 200 lines) ==="
+          sed -n '1,200p' build/center_work/center_stdout.log || true
+          echo "=== center stderr (first 200 lines) ==="
+          sed -n '1,200p' build/center_work/center_stderr.log || true
+
+      - name: Derive and validate center outputs
+        id: center_meta
+        if: always()
+        working-directory: build/center_work/${{ env.PACKAGE_NAME }}
+        run: |
+          set -euo pipefail
+          rc="$(cat ../center_operational_exit_code.txt)"
+          case "$rc" in
+            0|10|11|20|21) ;;
+            *) echo "Unexpected center operational code: $rc" >&2; exit 1 ;;
+          esac
+
+          summary="results/center_stage_status.json"
+          test -s "$summary"
+          json_rc="$(python center_status.py --summary "$summary" --observed-return "$rc" --field exit_code)"
+          outcome="$(python center_status.py --summary "$summary" --field outcome)"
+          scientific_status="$(python center_status.py --summary "$summary" --field classification)"
+          test "$json_rc" = "$rc"
+
+          candidate_produced=false
+          if [[ "$outcome" == "CANDIDATE_PRODUCED" ]]; then
+            candidate_produced=true
+          fi
+
+          {
+            echo "outcome=$outcome"
+            echo "scientific_status=$scientific_status"
+            echo "center_exit_code=$rc"
+            echo "candidate_produced=$candidate_produced"
+          } >> "$GITHUB_OUTPUT"
+
+          {
+            echo "### Center-stage result"
+            echo "- Outcome: \`$outcome\`"
+            echo "- Operational code: \`$rc\`"
+            echo "- Scientific status: $scientific_status"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload complete center-stage record
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: trackS-center-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/center_work
+          if-no-files-found: error
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+  continuum:
+    name: 3 - validated continuum and proof-grade verification
+    needs: center_sdps
+    if: needs.center_sdps.outputs.outcome == 'CANDIDATE_PRODUCED'
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - name: Checkout orchestration code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Download center-stage package and candidates
+        uses: actions/download-artifact@v8
+        with:
+          name: trackS-center-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/continuum_input
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+          cache-dependency-path: trackS_execution_package_v5/requirements-core.txt
+
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v3
+        with:
+          version: '1.10'
+          arch: x64
+          show-versioninfo: 'true'
+
+      - name: Prepare continuum workspace and Python dependencies
+        run: |
+          set -euo pipefail
+          test -d "build/continuum_input/${PACKAGE_NAME}"
+          mkdir -p build/continuum_work
+          cp -a "build/continuum_input/${PACKAGE_NAME}" "build/continuum_work/${PACKAGE_NAME}"
+          python -m pip install --upgrade pip
+          python -m pip install numpy scipy h5py mpmath
+          python -m pip check
+
+      - name: Record Julia and Python environments
+        working-directory: build/continuum_work/${{ env.PACKAGE_NAME }}
+        run: |
+          set -euo pipefail
+          mkdir -p logs
+          python -m pip freeze > logs/python_continuum_environment_lock.txt
+          julia --version | tee logs/julia_version.txt
+
+      - name: Execute validated continuum and proof verification
+        run: |
+          set -euo pipefail
+          rc=0
+          python orchestration/run_continuum_stage.py \
+            --root "$GITHUB_WORKSPACE/build/continuum_work/${PACKAGE_NAME}" || rc=$?
+          printf '%s\n' "$rc" > build/continuum_work/continuum_operational_exit_code.txt
+
+      - name: Validate continuum machine record
+        working-directory: build/continuum_work/${{ env.PACKAGE_NAME }}
+        run: |
+          set -euo pipefail
+          test -s results/continuum_stage_status.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('results/continuum_stage_status.json')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          required = {'status', 'scientific_status'}
+          missing = sorted(required.difference(data))
+          if missing:
+              raise SystemExit(f'missing continuum fields: {missing}')
+          print(json.dumps({'status': data['status'], 'scientific_status': data['scientific_status']}, indent=2))
+          PY
+
+      - name: Capture Julia package lock
+        if: always()
+        working-directory: build/continuum_work/${{ env.PACKAGE_NAME }}
+        run: |
+          if [[ -f julia/Manifest.toml ]]; then
+            cp julia/Manifest.toml logs/Julia_Manifest.toml
+          fi
+          julia --project=julia -e 'using Pkg; Pkg.status()' > logs/julia_package_status.txt 2>&1 || true
+
+      - name: Upload continuum-stage record
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: trackS-continuum-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/continuum_work
+          if-no-files-found: error
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}
+
+  final_adjudication:
+    name: 4 - artifact-driven final scientific adjudication
+    needs: [integrity, center_sdps, continuum]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout adjudication code
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Download integrity artifact
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: trackS-integrity-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/retrieved/integrity
+
+      - name: Download center artifact
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: trackS-center-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/retrieved/center
+
+      - name: Download continuum artifact when present
+        if: needs.center_sdps.outputs.outcome == 'CANDIDATE_PRODUCED'
+        continue-on-error: true
+        uses: actions/download-artifact@v8
+        with:
+          name: trackS-continuum-${{ github.run_id }}-${{ github.run_attempt }}
+          path: build/retrieved/continuum
+
+      - name: Produce final scientific status and artifact bundle
+        run: |
+          set -euo pipefail
+          mkdir -p build/retrieved
+          python orchestration/final_adjudicate.py \
+            --retrieved "$GITHUB_WORKSPACE/build/retrieved" \
+            --repository "$GITHUB_REPOSITORY" \
+            --run-id "$GITHUB_RUN_ID" \
+            --run-attempt "$GITHUB_RUN_ATTEMPT" \
+            --server-url "$GITHUB_SERVER_URL" \
+            --source-repo "$GITHUB_WORKSPACE" \
+            --output "$GITHUB_WORKSPACE/build/final_output/record"
+
+      - name: Verify final bundle and publish summary
+        run: |
+          set -euo pipefail
+          cd build/final_output
+          sha256sum --check trackS_final_remote_execution_bundle.zip.sha256
+          test -s record/final_trackS_execution_status.json
+          test -s record/final_trackS_execution_report.md
+          test -s record/SHA256SUMS
+          cat record/final_trackS_execution_report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload final adjudicated Track-S bundle
+        uses: actions/upload-artifact@v7
+        with:
+          name: trackS-final-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            build/final_output/trackS_final_remote_execution_bundle.zip
+            build/final_output/trackS_final_remote_execution_bundle.zip.sha256
+            build/final_output/record/final_trackS_execution_status.json
+            build/final_output/record/final_trackS_execution_report.md
+            build/final_output/record/SHA256SUMS
+          if-no-files-found: error
+          retention-days: ${{ env.ARTIFACT_RETENTION_DAYS }}

@@ -1,0 +1,5 @@
+# Convenience bundle only. A failure here must not block the core Clarabel run.
+-r requirements-core.txt
+cvxopt>=1.3,<2
+sdpa-python>=0.2
+mosek>=11,<12

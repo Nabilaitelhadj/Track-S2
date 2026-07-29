@@ -1,0 +1,75 @@
+{
+  "bundle_name": "Track-S fully repaired execution repository",
+  "components": {
+    "package_source_ledger": {
+      "path": "trackS_execution_package_v5/trackS_package_checksums.txt",
+      "sha256": "f9d2d1f06cc53fc61b6032592d3db9661772fbda8272ca12dc0d87cb914cbd6b",
+      "size": 5702
+    },
+    "package_source_manifest": {
+      "path": "trackS_execution_package_v5/trackS_package_manifest.json",
+      "sha256": "b4f45b709d92cc9c900406ea8d0506b75f766f8714c7d9150fa4a1fd26f86143",
+      "size": 11075
+    },
+    "source_archive_ledger": {
+      "path": "source_archives/SHA256SUMS",
+      "sha256": "26f2caed727b8489f9f6b3690046b53a91c4b07cd3b1a190e5cc468353f9e2d1",
+      "size": 229
+    },
+    "workflow": {
+      "path": ".github/workflows/trackS_execute.yml",
+      "sha256": "3d650501bcf9178be96533e9b9e1c5a9a3d2587d0b911ee8ce21145b30813266",
+      "size": 14993
+    }
+  },
+  "expected_workflow_artifacts": [
+    "trackS-integrity-<run_id>-<attempt>",
+    "trackS-center-<run_id>-<attempt>",
+    "trackS-continuum-<run_id>-<attempt> (candidate only)",
+    "trackS-final-<run_id>-<attempt>"
+  ],
+  "integrity_policy_version": "trackS-integrity-v2",
+  "metadata_dependency_order": [
+    "package source files",
+    "package source manifest and checksum ledger",
+    "deterministic status-code package archive",
+    "source archive checksum ledger and sidecars",
+    "BUNDLE_MANIFEST.json",
+    "repository source manifest and checksum ledger"
+  ],
+  "package_name": "trackS_execution_package_v5",
+  "required_repository_paths": [
+    ".github/workflows/trackS_execute.yml",
+    "BUNDLE_MANIFEST.json",
+    "BUNDLE_SHA256SUMS",
+    "repository_source_manifest.json",
+    "source_archives/SHA256SUMS",
+    "trackS_execution_package_v5/trackS_package_manifest.json",
+    "trackS_execution_package_v5/trackS_package_checksums.txt",
+    "orchestration/run_integrity_stage.py",
+    "orchestration/run_center_stage.py",
+    "orchestration/run_continuum_stage.py",
+    "orchestration/final_adjudicate.py"
+  ],
+  "schema_version": 2,
+  "source_archives": [
+    {
+      "path": "source_archives/queued_dvoc_trackS_actual_execution_SF.zip",
+      "sha256": "ee32bcc7dbf2db8d65476fbf2f5aafb94d271e17de502c47101f3410671b2cdc",
+      "size": 18684917
+    },
+    {
+      "path": "source_archives/queued_dvoc_trackS_execution_package_status_codes.zip",
+      "sha256": "5a7c321c6a8010dae706fbc36dc18cdafcae6a5d17349f9a9090a622b486babb",
+      "size": 2264915
+    }
+  ],
+  "status": "READY_FOR_WORKFLOW_DISPATCH",
+  "workflow_entrypoint": ".github/workflows/trackS_execute.yml",
+  "workflow_jobs": [
+    "integrity",
+    "center_sdps",
+    "continuum",
+    "final_adjudication"
+  ]
+}
